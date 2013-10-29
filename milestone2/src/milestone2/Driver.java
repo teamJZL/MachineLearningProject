@@ -14,7 +14,7 @@ import java.io.IOException;
 
 // loading .arff
 // http://weka.wikispaces.com/Use+WEKA+in+your+Java+code-
-//import weka.core.converters.ConverterUtils.DataSource;
+import weka.core.converters.ConverterUtils.DataSource;
 
 // reference from:
 // http://ianma.wordpress.com/2010/01/16/weka-with-java-eclipse-getting-started/
@@ -53,15 +53,15 @@ public class Driver {
         // Step 2: Train a classifier
         //======================================================================
         // Create an empty training set
-        Instances isTrainingSet = new Instances("Rel", fvWekaAttributes, 10);       
+        Instances isTrainingSet = new Instances("Rel", fvWekaAttributes, 10);
 
         // Set class index
         isTrainingSet.setClassIndex(3);
 
         // Create the instance
         Instance iExample = new Instance(4);
-        iExample.setValue((Attribute)fvWekaAttributes.elementAt(0), 1.0);      
-        iExample.setValue((Attribute)fvWekaAttributes.elementAt(1), 0.5);      
+        iExample.setValue((Attribute)fvWekaAttributes.elementAt(0), 1.0);
+        iExample.setValue((Attribute)fvWekaAttributes.elementAt(1), 0.5);
         iExample.setValue((Attribute)fvWekaAttributes.elementAt(2), "gray");
         iExample.setValue((Attribute)fvWekaAttributes.elementAt(3), "positive");
 
@@ -96,18 +96,19 @@ public class Driver {
 
         // Step 4: Use the classifier
         //======================================================================
-        // Specify that the instance belong to the training set 
+        // Specify that the instance belong to the training set
         // in order to inherit from the set description
         iExample.setDataset(isTrainingSet);
 
         // Get the likelihood of each classes 
-        // fDistribution[0] is the probability of being positive 
-        // fDistribution[1] is the probability of being negative 
+        // fDistribution[0] is the probability of being positive
+        // fDistribution[1] is the probability of being negative
         double[] fDistribution = cModel.distributionForInstance(iExample);
-        System.out.print("\n Probability of being positive: ");
-        System.out.print(fDistribution[0]);
-        System.out.print("\n Probability of being negative: ");
-        System.out.print(fDistribution[1]);
+        System.out.println();
+        System.out.println("Probability of being positive: ");
+        System.out.println(fDistribution[0]);
+        System.out.println("Probability of being negative: ");
+        System.out.println(fDistribution[1]);
         System.out.println();
 
         // Output to .txt
@@ -134,7 +135,7 @@ public class Driver {
             fop.flush();
             fop.close();
 
-            System.out.println("Done");
+            System.out.println("Output to .txt: Done");
 
         } catch (IOException e) {
             e.printStackTrace();
