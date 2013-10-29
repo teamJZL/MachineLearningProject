@@ -14,7 +14,7 @@ import java.io.IOException;
 
 // loading .arff
 // http://weka.wikispaces.com/Use+WEKA+in+your+Java+code-
-import weka.core.converters.ConverterUtils.DataSource;
+//import weka.core.converters.ConverterUtils.DataSource;
 
 // reference from:
 // http://ianma.wordpress.com/2010/01/16/weka-with-java-eclipse-getting-started/
@@ -94,7 +94,7 @@ public class Driver {
             System.out.println();
         }
 
-        // Step 4: Use he classifier
+        // Step 4: Use the classifier
         //======================================================================
         // Specify that the instance belong to the training set 
         // in order to inherit from the set description
