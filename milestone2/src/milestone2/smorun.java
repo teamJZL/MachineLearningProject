@@ -10,15 +10,17 @@ import weka.core.Instance;                        // Step 2. fill training set w
 import weka.core.Instances;  
 
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 import weka.core.converters.ArffLoader.ArffReader;
 
 public class smorun {
 
 	public static void main(String[] args) throws Exception {
-		 BufferedReader reader = new BufferedReader(new FileReader("C:/Users/Vineet/wekafiles/dataout/hepatitis_train.arff"));
+		 BufferedReader reader = new BufferedReader(new FileReader("C:/Users/Vineet/wekafiles/dataout/anneal_train.arff"));
 		 ArffReader arff = new ArffReader(reader);
 		 Instances isTrainingSet = arff.getData();
 		 isTrainingSet.setClassIndex(isTrainingSet.numAttributes() - 1);
@@ -27,8 +29,12 @@ public class smorun {
 		 Classifier cModel = (Classifier)new SMO();   
          cModel.buildClassifier(isTrainingSet);
          
+         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("C:/Users/Vineet/wekafiles/models/anneal_smo.model"));
+         oos.writeObject(cModel);
+         oos.flush();
+         oos.close();
          
-         BufferedReader reader2 = new BufferedReader(new FileReader("C:/Users/Vineet/wekafiles/dataout/hepatitis_train.arff"));
+         BufferedReader reader2 = new BufferedReader(new FileReader("C:/Users/Vineet/wekafiles/dataout/anneal_test.arff"));
     	 ArffReader arff2 = new ArffReader(reader2);
     	 Instances isTestSet = arff2.getData();
     	 isTestSet.setClassIndex(isTestSet.numAttributes() - 1);
