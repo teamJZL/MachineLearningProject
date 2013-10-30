@@ -21,7 +21,7 @@ import weka.core.converters.ArffLoader.ArffReader;
 public class ftrun {
 
 	public static void main(String[] args) throws Exception {
-		 BufferedReader reader = new BufferedReader(new FileReader("C:/Users/Vineet/wekafiles/dataout/anneal_train.arff"));
+		 BufferedReader reader = new BufferedReader(new FileReader("data/anneal_train.arff"));
 		 ArffReader arff = new ArffReader(reader);
 		 Instances isTrainingSet = arff.getData();
 		 isTrainingSet.setClassIndex(isTrainingSet.numAttributes() - 1);
@@ -30,12 +30,12 @@ public class ftrun {
 		 Classifier cModel = (Classifier)new FT();   
          cModel.buildClassifier(isTrainingSet);
          
-         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("C:/Users/Vineet/wekafiles/models/anneal_ft.model"));
+         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("anneal_ft.model"));
          oos.writeObject(cModel);
          oos.flush();
          oos.close();
          
-         BufferedReader reader2 = new BufferedReader(new FileReader("C:/Users/Vineet/wekafiles/dataout/anneal_test.arff"));
+         BufferedReader reader2 = new BufferedReader(new FileReader("data/anneal_test.arff"));
     	 ArffReader arff2 = new ArffReader(reader2);
     	 Instances isTestSet = arff2.getData();
     	 isTestSet.setClassIndex(isTestSet.numAttributes() - 1);

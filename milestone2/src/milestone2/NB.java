@@ -17,7 +17,7 @@ import weka.core.converters.ArffLoader.ArffReader;
 public class NB {
 
 	public static void main(String[] args) throws Exception {
-		 BufferedReader reader = new BufferedReader(new FileReader("C:/Users/Vineet/wekafiles/anneal_train.arff"));
+		 BufferedReader reader = new BufferedReader(new FileReader("data/anneal_train.arff"));
 		 ArffReader arff = new ArffReader(reader);
 		 Instances isTrainingSet = arff.getData();
 		 isTrainingSet.setClassIndex(isTrainingSet.numAttributes() - 1);
@@ -27,7 +27,7 @@ public class NB {
          cModel.buildClassifier(isTrainingSet);
          
          
-         BufferedReader reader2 = new BufferedReader(new FileReader("C:/Users/Vineet/wekafiles/anneal_train.arff"));
+         BufferedReader reader2 = new BufferedReader(new FileReader("data/anneal_train.arff"));
     	 ArffReader arff2 = new ArffReader(reader2);
     	 Instances isTestSet = arff2.getData();
     	 isTestSet.setClassIndex(isTestSet.numAttributes() - 1);
