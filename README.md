@@ -1,16 +1,15 @@
 601 Machine Learning Project
 ============================
-Team JZL:  
+**Team JZL:**  
 + Vineet Joshi  
 + David Zhou  
 + Luigi Leung  
 
 ## Git in Eclipse
 Follow these screenshots:
+[http://imgur.com/a/ztTcA](http://imgur.com/a/ztTcA)
 
-        [http://imgur.com/a/ztTcA](http://imgur.com/a/ztTcA)
-
-## Git Usage
+## Git not in Eclipse
 Click on that "Download ZIP" button on the bottom-right of this github page.  
 Or in the terminal in your Eclipse workspace directory:
 
