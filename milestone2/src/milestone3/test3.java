@@ -39,7 +39,7 @@ public class test3 {
  	    CVParameterSelection ps1 = new CVParameterSelection();
  	    ps1.setClassifier(new SMO());
  	    ps1.setNumFolds(10);  // using 10-fold CV
- 	    ps1.addCVParameter("P 1.0e-13 1.0e-11 10");
+ 	    ps1.addCVParameter("P 1.0e-14 1.0e-10 10");
  	    
 
  	    // build and output best options
@@ -75,7 +75,7 @@ public class test3 {
 	    CVParameterSelection ps2 = new CVParameterSelection();
 	    ps2.setClassifier(new SMO());
 	    ps2.setNumFolds(10);  // using 10-fold CV
-	    ps2.addCVParameter("L 1.0e-5 1.0e-3 10");
+	    ps2.addCVParameter("L 1.0e-6 1.0e-2 10");
 	    
 
 	    // build and output best options
