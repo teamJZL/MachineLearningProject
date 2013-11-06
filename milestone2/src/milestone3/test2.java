@@ -8,7 +8,7 @@ import weka.core.FastVector;                        // Step 1
 import weka.core.Instance;                        // Step 2. fill training set with one instance
 import weka.core.Instances;  
 import weka.core.Utils;
-import weka.classifiers.trees.FT;
+import weka.classifiers.rules.PART;
 
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
@@ -19,7 +19,7 @@ import java.io.ObjectOutputStream;
 import weka.core.converters.ArffLoader.ArffReader;
 import weka.classifiers.meta.*;
 
-public class test {
+public class test2 {
 
 	public static void main(String[] args) throws Exception {
 		 BufferedReader reader = new BufferedReader(new FileReader("C:/Users/Vineet/wekafiles/dataout/anneal_train.arff"));
@@ -35,9 +35,9 @@ public class test {
 		 
 		// setup classifier1
 	    CVParameterSelection ps1 = new CVParameterSelection();
-	    ps1.setClassifier(new FT());
+	    ps1.setClassifier(new PART());
 	    ps1.setNumFolds(10);  // using 10-fold CV
-	    ps1.addCVParameter("M 10 20 11");
+	    ps1.addCVParameter("C 0.15 0.35 5");
 	    
 
 	    // build and output best options
@@ -73,9 +73,9 @@ public class test {
    	 	// setup classifier 2
    	
 	    CVParameterSelection ps2 = new CVParameterSelection();
-	    ps2.setClassifier(new FT());
+	    ps2.setClassifier(new PART());
 	    ps2.setNumFolds(10);  // using 10-fold CV
-	    ps2.addCVParameter("F 0 2 3");
+	    ps2.addCVParameter("M 1 4 4");
 	    
 
 	    // build and output best options
@@ -104,6 +104,39 @@ public class test {
    	 			System.out.print("|");
    	 		}
    	 		System.out.println();
+   	 	}
+   	 		
+   	 		
+   	    // classifier 3
+   	 	String[] op = new String[1];
+   	    op[0] = "-R";
+   	 	Classifier ps3 = (Classifier)new PART(); 
+   	    ps3.setOptions(op);
+   	    
+        ps3.buildClassifier(isTrainingSet);
+        
+        
+        // Step 3: Test the classifier
+        //===========================================================================
+	    //Test the model
+	    Evaluation eTest3 = new Evaluation(isTrainingSet);
+	    eTest3.evaluateModel(ps3, isTestSet);
+     
+	    // Print the result  la Weka explorer:
+	    String strSummary3 = eTest3.toSummaryString();
+	    System.out.println(strSummary3);
+     
+	    // Get the confusion matrix
+	    double[][] cmMatrix3 = eTest3.confusionMatrix();
+    
+	    // Print out the confusion matrix (from ianma.wordpress.com)
+   	 	for(int row_i=0; row_i<cmMatrix3.length; row_i++){
+   	 		for(int col_i=0; col_i<cmMatrix3.length; col_i++){
+   	 			System.out.print(cmMatrix3[row_i][col_i]);
+   	 			System.out.print("|");
+   	 		}
+   	 		System.out.println();
    	 	}	
 	}
 }
+
