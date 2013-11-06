@@ -5,7 +5,7 @@ import weka.classifiers.Evaluation;                // Step 3
 import weka.classifiers.bayes.NaiveBayes;
 import weka.core.Attribute;                        // Step 1
 import weka.core.FastVector;                        // Step 1
-import weka.core.Instance;                        // Step 2. fill training set with one instance
+import weka.core.Instance;                        // Step 2. fill training, set with one instance
 import weka.core.Instances;  
 import weka.core.Utils;
 import weka.classifiers.rules.PART;
@@ -14,7 +14,7 @@ import weka.classifiers.functions.supportVector.*;
 import weka.classifiers.meta.Dagging;
 
 import java.io.BufferedReader;
-import java.io.FileOutputStream;
+import java.io.FileOutputStream; 
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
