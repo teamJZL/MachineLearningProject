@@ -84,7 +84,7 @@ public class test {
 	    
 	        
 	       
-	    // Step 3: Test the classifier
+	    // Step 3: Test the classifier.
         //===========================================================================
 	    //Test the model
 	    Evaluation eTest2 = new Evaluation(isTrainingSet);
