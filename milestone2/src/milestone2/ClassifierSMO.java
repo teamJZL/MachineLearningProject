@@ -21,15 +21,14 @@ public class ClassifierSMO {
         isTrainingSet.setClassIndex(isTrainingSet.numAttributes() - 1);
 
         Classifier cModel = (Classifier)new SMO();
-        cModel.buildClassifier(isTrainingSet);
-        
         String[] op = new String[4];
    	    op[0] = "-P";
    	    op[1] = "1e-14";
    	    op[2] = "-L";
    	    op[3] = "1e-6";
    	    cModel.setOptions(op);
-
+        cModel.buildClassifier(isTrainingSet);
+                
        /* ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("anneal_smo.model"));
         oos.writeObject(cModel);
         oos.flush();
