@@ -15,7 +15,7 @@ import weka.core.converters.ArffLoader.ArffReader;
 public class ClassifierFT {
 
     public static void main(String[] args) throws Exception {
-        BufferedReader reader = new BufferedReader(new FileReader("data/balance-scale_train.arff"));
+        BufferedReader reader = new BufferedReader(new FileReader("data/hypothyroid_train.arff"));
         ArffReader arff = new ArffReader(reader);
         Instances isTrainingSet = arff.getData();
         isTrainingSet.setClassIndex(isTrainingSet.numAttributes() - 1);
@@ -23,18 +23,18 @@ public class ClassifierFT {
         Classifier cModel = (Classifier)new FT();  
         String[] op = new String[4];
    	    op[0] = "-M";
-   	    op[1] = "12";
+   	    op[1] = "10";
    	    op[2] = "-F";
-   	    op[3] = "2";
+   	    op[3] = "1";
    	    cModel.setOptions(op);
         cModel.buildClassifier(isTrainingSet);
 
-        /*ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("anneal_ft.model"));
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("models/hypothyroid.model"));
         oos.writeObject(cModel);
         oos.flush();
-        oos.close();*/
+        oos.close();
 
-        BufferedReader reader2 = new BufferedReader(new FileReader("data/balance-scale_test.arff"));
+        BufferedReader reader2 = new BufferedReader(new FileReader("data/hypothyroid_test.arff"));
         ArffReader arff2 = new ArffReader(reader2);
         Instances isTestSet = arff2.getData();
         isTestSet.setClassIndex(isTestSet.numAttributes() - 1);
