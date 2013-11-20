@@ -2,17 +2,26 @@ package milestone3c;
 
 import weka.classifiers.Classifier;                // Step 2
 import weka.classifiers.Evaluation;                // Step 3
-import weka.classifiers.functions.SMO;
+import weka.classifiers.bayes.NaiveBayes;
+import weka.core.Attribute;                        // Step 1
+import weka.core.FastVector;                       // Step 1
+import weka.core.Instance;                         // Step 2. fill training set with one instance
 import weka.core.Instances;  
+import weka.core.Utils;
+import weka.classifiers.rules.PART;
+import weka.classifiers.functions.*;
+import weka.classifiers.functions.supportVector.*;
 
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 import weka.core.converters.ArffLoader.ArffReader;
+import weka.classifiers.meta.*;
 
-public class DefaultSMO {
+public class TuneSMO {
 
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new FileReader("data/diabetes_train.arff"));
@@ -20,33 +29,39 @@ public class DefaultSMO {
         Instances isTrainingSet = arff.getData();
         isTrainingSet.setClassIndex(isTrainingSet.numAttributes() - 1);
 
-        Classifier cModel = (Classifier)new SMO();
-/*        String[] op = new String[5];
-   	    op[0] = "-P";
-   	    op[1] = "1e-14";
-   	    op[2] = "-L";
-   	    op[3] = "1e-4";
-   	    op[4] = "-M";
-   	    cModel.setOptions(op);*/
-        cModel.buildClassifier(isTrainingSet);
-                
-        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("models_milestone3c/diabetes0.model"));
-        oos.writeObject(cModel);
-        oos.flush();
-        oos.close();
-
         BufferedReader reader2 = new BufferedReader(new FileReader("data/diabetes_test.arff"));
         ArffReader arff2 = new ArffReader(reader2);
         Instances isTestSet = arff2.getData();
         isTestSet.setClassIndex(isTestSet.numAttributes() - 1);
 
+        //===========================================================================
+        // setup classifier1
+        //===========================================================================
+        CVParameterSelection ps1 = new CVParameterSelection();
+        ps1.setClassifier(new SMO());
+        ps1.setNumFolds(10);  // using 10-fold CV
+        ps1.addCVParameter("P 1.0e-14 1.0e-14 1");
+        ps1.addCVParameter("L 1.0e-6 1.0e-6 1");
+/*        String[] op = new String[1];
+        op[0] = "-M";
+        ps1.setOptions(op);*/
+
+        // build and output best options
+        ps1.buildClassifier(isTrainingSet);
+        System.out.println(Utils.joinOptions(ps1.getBestClassifierOptions()));
+        
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("models_milestone3c/diabetes1.model"));
+        oos.writeObject(ps1);
+        oos.flush();
+        oos.close();
+        
         // Step 3: Test the classifier
         //===========================================================================
-        // Test the model
+        //Test the model
         Evaluation eTest = new Evaluation(isTrainingSet);
-        eTest.evaluateModel(cModel, isTestSet);
+        eTest.evaluateModel(ps1, isTestSet);
 
-        // Print the result a la Weka explorer:
+        // Print the result  la Weka explorer:
         String strSummary = eTest.toSummaryString();
         System.out.println(strSummary);
 

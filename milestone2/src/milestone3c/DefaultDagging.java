@@ -29,7 +29,7 @@ public class DefaultDagging {
    	    cModel.setOptions(op);*/
         cModel.buildClassifier(isTrainingSet);
 
-        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("model0/credit-a0.model"));
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("models_milestone3c/credit-a0.model"));
         oos.writeObject(cModel);
         oos.flush();
         oos.close();
