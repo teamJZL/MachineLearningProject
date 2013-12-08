@@ -1,0 +1,98 @@
+@relation flags-weka.filters.unsupervised.instance.Randomize-S42-weka.filters.unsupervised.instance.RemovePercentage-P33.0-V
+
+@attribute name {Afghanistan,Albania,Algeria,American-Samoa,Andorra,Angola,Anguilla,Antigua-Barbuda,Argentina,Argentine,Australia,Austria,Bahamas,Bahrain,Bangladesh,Barbados,Belgium,Belize,Benin,Bermuda,Bhutan,Bolivia,Botswana,Brazil,British-Virgin-Isles,Brunei,Bulgaria,Burkina,Burma,Burundi,Cameroon,Canada,Cape-Verde-Islands,Cayman-Islands,Central-African-Republic,Chad,Chile,China,Colombia,Comorro-Islands,Congo,Cook-Islands,Costa-Rica,Cuba,Cyprus,Czechoslovakia,Denmark,Djibouti,Dominica,Dominican-Republic,Ecuador,Egypt,El-Salvador,Equatorial-Guinea,Ethiopia,Faeroes,Falklands-Malvinas,Fiji,Finland,France,French-Guiana,French-Polynesia,Gabon,Gambia,Germany-DDR,Germany-FRG,Ghana,Gibraltar,Greece,Greenland,Grenada,Guam,Guatemala,Guinea,Guinea-Bissau,Guyana,Haiti,Honduras,Hong-Kong,Hungary,Iceland,India,Indonesia,Iran,Iraq,Ireland,Israel,Italy,Ivory-Coast,Jamaica,Japan,Jordan,Kampuchea,Kenya,Kiribati,Kuwait,Laos,Lebanon,Lesotho,Liberia,Libya,Liechtenstein,Luxembourg,Malagasy,Malawi,Malaysia,Maldive-Islands,Mali,Malta,Marianas,Mauritania,Mauritius,Mexico,Micronesia,Monaco,Mongolia,Montserrat,Morocco,Mozambique,Nauru,Nepal,Netherlands,Netherlands-Antilles,New-Zealand,Nicaragua,Niger,Nigeria,Niue,North-Korea,North-Yemen,Norway,Oman,Pakistan,Panama,Papua-New-Guinea,Parguay,Peru,Philippines,Poland,Portugal,Puerto-Rico,Qatar,Romania,Rwanda,San-Marino,Sao-Tome,Saudi-Arabia,Senegal,Seychelles,Sierra-Leone,Singapore,Soloman-Islands,Somalia,South-Africa,South-Korea,South-Yemen,Spain,Sri-Lanka,St-Helena,St-Kitts-Nevis,St-Lucia,St-Vincent,Sudan,Surinam,Swaziland,Sweden,Switzerland,Syria,Taiwan,Tanzania,Thailand,Togo,Tonga,Trinidad-Tobago,Tunisia,Turkey,Turks-Cocos-Islands,Tuvalu,UAE,UK,US-Virgin-Isles,USA,USSR,Uganda,Uruguay,Vanuatu,Vatican-City,Venezuela,Vietnam,Western-Samoa,Yugoslavia,Zaire,Zambia,Zimbabwe}
+@attribute landmass {1,2,3,4,5,6}
+@attribute zone {1,2,3,4}
+@attribute area numeric
+@attribute population numeric
+@attribute language {1,2,3,4,5,6,7,8,9,10}
+@attribute religion {0,1,2,3,4,5,6,7}
+@attribute bars {0,1,2,3,5}
+@attribute stripes {0,1,2,3,4,5,6,7,9,11,13,14}
+@attribute colours {1,2,3,4,5,6,7,8}
+@attribute red {0,1}
+@attribute green {0,1}
+@attribute blue {0,1}
+@attribute gold {0,1}
+@attribute white {0,1}
+@attribute black {0,1}
+@attribute orange {0,1}
+@attribute mainhue {black,blue,brown,gold,green,orange,red,white}
+@attribute circles {0,1,2,4}
+@attribute crosses {0,1,2}
+@attribute saltires {0,1}
+@attribute quarters {0,1,4}
+@attribute sunstars {0,1,2,3,4,5,6,7,9,10,14,15,22,50}
+@attribute crescent {0,1}
+@attribute triangle {0,1}
+@attribute icon {0,1}
+@attribute animate {0,1}
+@attribute text {0,1}
+@attribute topleft {black,blue,gold,green,orange,red,white}
+@attribute botright {black,blue,brown,gold,green,orange,red,white}
+
+@data
+Uruguay,2,3,178,3,2,0,0,9,3,0,0,1,1,1,0,0,white,0,0,0,1,1,0,0,0,0,0,white,white
+Sri-Lanka,5,1,66,15,10,3,2,0,4,0,1,0,1,0,0,1,gold,0,0,0,0,0,0,0,1,1,0,gold,white
+Gibraltar,3,4,0,0,1,1,0,1,3,1,0,0,1,1,0,0,white,0,0,0,0,0,0,0,1,0,0,white,white
+Haiti,1,4,28,6,3,0,2,0,2,1,0,0,0,0,1,0,black,0,0,0,0,0,0,0,0,0,0,black,white
+Central-African-Republic,4,1,623,2,10,5,1,0,5,1,1,1,1,1,0,0,gold,0,0,0,0,1,0,0,0,0,0,blue,white
+Belize,1,4,23,0,1,1,0,2,8,1,1,1,1,1,1,1,blue,1,0,0,0,0,0,0,1,1,1,red,white
+Chile,2,3,757,11,2,0,0,2,3,1,0,1,0,1,0,0,red,0,0,0,1,1,0,0,0,0,0,blue,white
+Vanuatu,6,2,15,0,6,1,0,0,4,1,1,0,1,0,1,0,red,0,0,0,0,0,0,1,0,1,0,black,white
+Surinam,2,4,63,0,6,1,0,5,4,1,1,0,1,1,0,0,red,0,0,0,0,1,0,0,0,0,0,green,white
+China,5,1,9561,1008,7,6,0,0,2,1,0,0,1,0,0,0,red,0,0,0,0,5,0,0,0,0,0,red,white
+Gambia,4,4,10,1,1,5,0,5,4,1,1,1,0,1,0,0,red,0,0,0,0,0,0,0,0,0,0,red,white
+Senegal,4,4,196,6,3,2,3,0,3,1,1,0,1,0,0,0,green,0,0,0,0,1,0,0,0,0,0,green,white
+Luxembourg,3,1,3,0,4,0,0,3,3,1,0,1,0,1,0,0,red,0,0,0,0,0,0,0,0,0,0,red,white
+Dominican-Republic,1,4,49,6,2,0,0,0,3,1,0,1,0,1,0,0,blue,0,1,0,0,0,0,0,0,0,0,blue,white
+Germany-FRG,3,1,249,61,4,1,0,3,3,1,0,0,1,0,1,0,black,0,0,0,0,0,0,0,0,0,0,black,white
+Cook-Islands,6,3,0,0,1,1,0,0,4,1,0,1,0,1,0,0,blue,1,1,1,1,15,0,0,0,0,0,white,white
+Japan,5,1,372,118,9,7,0,0,2,1,0,0,0,1,0,0,white,1,0,0,0,1,0,0,0,0,0,white,white
+Afghanistan,5,1,648,16,10,2,0,3,5,1,1,0,1,1,1,0,green,0,0,0,0,1,0,0,1,0,0,black,white
+Kiribati,6,1,0,0,1,1,0,0,4,1,0,1,1,1,0,0,red,0,0,0,0,1,0,0,1,1,0,red,white
+Falklands-Malvinas,2,3,12,0,1,1,0,0,6,1,1,1,1,1,0,0,blue,1,1,1,1,0,0,0,1,1,1,white,white
+Panama,2,4,76,2,2,0,0,0,3,1,0,1,0,1,0,0,red,0,0,0,4,2,0,0,0,0,0,white,white
+Saudi-Arabia,5,1,2150,9,8,2,0,0,2,0,1,0,0,1,0,0,green,0,0,0,0,0,0,0,1,0,1,green,white
+Finland,3,1,337,5,9,1,0,0,2,0,0,1,0,1,0,0,white,0,1,0,0,0,0,0,0,0,0,white,white
+Switzerland,3,1,41,6,4,1,0,0,2,1,0,0,0,1,0,0,red,0,1,0,0,0,0,0,0,0,0,red,white
+Belgium,3,1,31,10,6,0,3,0,3,1,0,0,1,0,1,0,gold,0,0,0,0,0,0,0,0,0,0,black,white
+American-Samoa,6,3,0,0,1,1,0,0,5,1,0,1,1,1,0,1,blue,0,0,0,0,0,0,1,1,1,0,blue,white
+Turkey,5,1,781,45,9,2,0,0,2,1,0,0,0,1,0,0,red,0,0,0,0,1,1,0,0,0,0,red,white
+San-Marino,3,1,0,0,6,0,0,2,2,0,0,1,0,1,0,0,white,0,0,0,0,0,0,0,0,0,0,white,white
+Qatar,5,1,11,0,8,2,0,0,2,0,0,0,0,1,0,1,brown,0,0,0,0,0,0,0,0,0,0,white,white
+French-Guiana,2,4,91,0,3,0,3,0,3,1,0,1,0,1,0,0,white,0,0,0,0,0,0,0,0,0,0,blue,white
+Cyprus,3,1,9,1,6,1,0,0,3,0,1,0,1,1,0,0,white,0,0,0,0,0,0,0,1,1,0,white,white
+Bermuda,1,4,0,0,1,1,0,0,6,1,1,1,1,1,1,0,red,1,1,1,1,0,0,0,1,1,0,white,white
+Sweden,3,1,450,8,6,1,0,0,2,0,0,1,1,0,0,0,blue,0,1,0,0,0,0,0,0,0,0,blue,white
+UK,3,4,245,56,1,1,0,0,3,1,0,1,0,1,0,0,red,0,1,1,0,0,0,0,0,0,0,white,white
+Portugal,3,4,92,10,6,0,0,0,5,1,1,1,1,1,0,0,red,1,0,0,0,0,0,0,1,0,0,green,white
+St-Vincent,1,4,0,0,1,1,5,0,4,0,1,1,1,1,0,0,green,0,0,0,0,0,0,0,1,1,1,blue,white
+Jordan,5,1,98,2,8,2,0,3,4,1,1,0,0,1,1,0,black,0,0,0,0,1,0,1,0,0,0,black,white
+St-Lucia,1,4,0,0,1,1,0,0,4,0,0,1,1,1,1,0,blue,0,0,0,0,0,0,1,0,0,0,blue,white
+Mozambique,4,2,783,12,10,5,0,5,5,1,1,0,1,1,1,0,gold,0,0,0,0,1,0,1,1,0,0,green,white
+Iran,5,1,1648,39,6,2,0,3,3,1,1,0,0,1,0,0,red,0,0,0,0,0,0,0,1,0,1,green,white
+Liechtenstein,3,1,0,0,4,0,0,2,3,1,0,1,1,0,0,0,red,0,0,0,0,0,0,0,1,0,0,blue,white
+Angola,4,2,1247,7,10,5,0,2,3,1,0,0,1,0,1,0,red,0,0,0,0,1,0,0,1,0,0,red,white
+Guam,6,1,0,0,1,1,0,0,7,1,1,1,1,1,0,1,blue,0,0,0,0,0,0,0,1,1,1,red,white
+Kuwait,5,1,18,2,8,2,0,3,4,1,1,0,0,1,1,0,green,0,0,0,0,0,0,0,0,0,0,green,white
+UAE,5,1,84,1,8,2,1,3,4,1,1,0,0,1,1,0,green,0,0,0,0,0,0,0,0,0,0,red,white
+USA,1,4,9363,231,1,1,0,13,3,1,0,1,0,1,0,0,white,0,0,0,1,50,0,0,0,0,0,blue,white
+Barbados,1,4,0,0,1,1,3,0,3,0,0,1,1,0,1,0,blue,0,0,0,0,0,0,0,1,0,0,blue,white
+Germany-DDR,3,1,108,17,4,6,0,3,3,1,0,0,1,0,1,0,gold,0,0,0,0,0,0,0,1,0,0,black,white
+Venezuela,2,4,912,15,2,0,0,3,7,1,1,1,1,1,1,1,red,0,0,0,0,7,0,0,1,1,0,gold,white
+Parguay,2,3,407,3,2,0,0,3,6,1,1,1,1,1,1,0,red,1,0,0,0,1,0,0,1,1,1,red,white
+Syria,5,1,185,10,8,2,0,3,4,1,1,0,0,1,1,0,red,0,0,0,0,2,0,0,0,0,0,red,white
+Laos,5,1,236,3,10,6,0,3,3,1,0,1,0,1,0,0,red,1,0,0,0,0,0,0,0,0,0,red,white
+Tonga,6,2,1,0,10,1,0,0,2,1,0,0,0,1,0,0,red,0,1,0,1,0,0,0,0,0,0,white,white
+Austria,3,1,84,8,4,0,0,3,2,1,0,0,0,1,0,0,red,0,0,0,0,0,0,0,0,0,0,red,white
+Tuvalu,6,2,0,0,1,1,0,0,5,1,0,1,1,1,0,0,blue,0,1,1,1,9,0,0,0,0,0,white,white
+Sierra-Leone,4,4,72,3,1,5,0,3,3,0,1,1,0,1,0,0,green,0,0,0,0,0,0,0,0,0,0,green,white
+Ecuador,2,3,284,8,2,0,0,3,3,1,0,1,1,0,0,0,gold,0,0,0,0,0,0,0,0,0,0,gold,white
+Lesotho,4,2,30,1,10,5,2,0,4,1,1,1,0,1,0,0,blue,0,0,0,0,0,0,0,1,0,0,green,white
+Liberia,4,4,111,1,10,5,0,11,3,1,0,1,0,1,0,0,red,0,0,0,1,1,0,0,0,0,0,blue,white
+Guatemala,1,4,109,8,2,0,3,0,2,0,0,1,0,1,0,0,blue,0,0,0,0,0,0,0,0,0,0,blue,white
+Brunei,5,1,6,0,10,2,0,0,4,1,0,0,1,1,1,0,gold,0,0,0,0,0,0,1,1,1,1,white,white
+Australia,6,2,7690,15,1,1,0,0,3,1,0,1,0,1,0,0,blue,0,1,1,1,6,0,0,0,0,0,white,white
+St-Helena,4,3,0,0,1,1,0,0,7,1,1,1,1,1,0,1,blue,0,1,1,1,0,0,0,1,0,0,white,white
+Mongolia,5,1,1566,2,10,6,3,0,3,1,0,1,1,0,0,0,red,2,0,0,0,1,1,1,1,0,0,red,white
