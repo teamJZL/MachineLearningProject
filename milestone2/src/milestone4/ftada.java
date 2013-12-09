@@ -22,12 +22,12 @@ import weka.classifiers.meta.*;
 public class ftada {
 
     public static void main(String[] args) throws Exception {
-        BufferedReader reader = new BufferedReader(new FileReader("data_oldDataset/hypothyroid_train.arff"));
+        BufferedReader reader = new BufferedReader(new FileReader("ms4data/zoo_train.arff"));
         ArffReader arff = new ArffReader(reader);
         Instances isTrainingSet = arff.getData();
         isTrainingSet.setClassIndex(isTrainingSet.numAttributes() - 1);
 
-        BufferedReader reader2 = new BufferedReader(new FileReader("data_oldDataset/hypothyroid_test.arff"));
+        BufferedReader reader2 = new BufferedReader(new FileReader("ms4data/zoo_test.arff"));
         ArffReader arff2 = new ArffReader(reader2);
         Instances isTestSet = arff2.getData();
         isTestSet.setClassIndex(isTestSet.numAttributes() - 1);
@@ -51,28 +51,12 @@ public class ftada {
         // Step 3: Test the classifier
         //===========================================================================
         //Test the model
-        Evaluation eTest = new Evaluation(isTrainingSet);
-        eTest.evaluateModel(ps1, isTestSet);
-
-        // Print the result  la Weka explorer:
-        String strSummary = eTest.toSummaryString();
-        System.out.println(strSummary);
-
-        // Get the confusion matrix
-        double[][] cmMatrix = eTest.confusionMatrix();
-
-        // Print out the confusion matrix (from ianma.wordpress.com)
-        for(int row_i=0; row_i<cmMatrix.length; row_i++){
-            for(int col_i=0; col_i<cmMatrix.length; col_i++){
-                System.out.print(cmMatrix[row_i][col_i]);
-                System.out.print("|");
-            }
-            System.out.println();
+        for (int i = 0; i < isTestSet.numInstances(); i++) {
+        	   double pred = ps1.classifyInstance(isTestSet.instance(i));
+        	   System.out.println(pred);
         }
-        
-     // Print the result ˆ la Weka explorer:
-        String strSummary1 = eTest.toSummaryString();
-        System.out.println(strSummary1);
+           
+           
 
     }
 }
