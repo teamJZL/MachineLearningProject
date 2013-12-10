@@ -13,7 +13,7 @@ import weka.core.converters.ArffLoader.ArffReader;
 public class ClassifierNB {
 
     public static void main(String[] args) throws Exception {
-        String dataset_name = "arrhythmia";
+        String dataset_name = "flags";
         String traindata_name = String.format("ms5_milestone5data/%s_train.arff", dataset_name);
         String testdata_name = String.format("ms5_data5bnew/%s_test.arff", dataset_name);
         

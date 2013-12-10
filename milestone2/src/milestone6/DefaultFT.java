@@ -15,7 +15,7 @@ import weka.core.converters.ArffLoader.ArffReader;
 public class DefaultFT {
 
     public static void main(String[] args) throws Exception {
-        String dataset_name = "arrhythmia";
+        String dataset_name = "haberman";
         String traindata_name = String.format("ms5_milestone5data/%s_train.arff", dataset_name);
         String testdata_name = String.format("ms5_data5bnew/%s_test.arff", dataset_name);
         
@@ -57,12 +57,12 @@ public class DefaultFT {
         double[][] cmMatrix = eTest.confusionMatrix();
 
         // Print out the confusion matrix (from ianma.wordpress.com)
-        for(int row_i=0; row_i<cmMatrix.length; row_i++){
+        /*for(int row_i=0; row_i<cmMatrix.length; row_i++){
             for(int col_i=0; col_i<cmMatrix.length; col_i++){
                 System.out.print(cmMatrix[row_i][col_i]);
                 System.out.print("|");
             }
             System.out.println();
-        }
+        }*/
     }
 }

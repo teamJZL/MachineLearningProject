@@ -17,7 +17,7 @@ import weka.core.converters.ArffLoader.ArffReader;
 public class EnsembleFT {
 
     public static void main(String[] args) throws Exception {
-        String dataset_name = "arrhythmia";
+        String dataset_name = "sick";
         String traindata_name = String.format("ms5_milestone5data/%s_train.arff", dataset_name);
         String testdata_name = String.format("ms5_data5bnew/%s_test.arff", dataset_name);
         
@@ -34,14 +34,15 @@ public class EnsembleFT {
             //ps1.setNumFolds(10);  // using 10-fold CV
             //ps1.addCVParameter("M 10 20 11");
          
-        AdaBoostM1 ps2 = new AdaBoostM1();
-        ps2.setClassifier(new FT());
-                
+        AdaBoostM1 ps1 = new AdaBoostM1();
+        ps1.setClassifier(new FT());
+        ps1.buildClassifier(isTrainingSet);
+        /*
         Bagging ps1 = new Bagging();
         ps1.setClassifier(ps2);
         // build and output best options
         ps1.buildClassifier(isTrainingSet);
-        
+        */
         //Classifier cModel = (Classifier)new FT();  
 /*        String[] op = new String[4];
    	    op[0] = "-M";
